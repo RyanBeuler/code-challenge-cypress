@@ -12,14 +12,19 @@ describe('Signup', () => {
   });
 
   describe('form validation displays an error when', () => {
-    xit('the username is empty', () => {
+    it('the username is empty', () => {
       cy.findByRole('button', { text: 'Submit' }).click();
-      cy.findByText('enter a username').should('have.class', 'error_message');
+      cy.findByText('Enter a username').should('have.class', 'error_message');
       cy.get('input[name=username]').should('have.class', 'error');
     });
 
-    xit('the password is less than 10 characters', () => {
+    it('the password is less than 10 characters', () => {
       // add test commands
+      cy.findByLabelText('Username').type('sparkbox');
+      cy.findByLabelText('Password').type('invalid');
+      cy.findByRole('button', { text: 'Submit' }).click();
+      cy.findByText('Password must be at least 10 characters').should('have.class', 'error_message');
+      cy.get('input[name=password]').should('have.class', 'error');
     });
   });
 });
