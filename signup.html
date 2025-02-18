@@ -176,7 +176,7 @@
         const errorMessage = document.createElement('div');
         errorMessage.classList.add('error_message', 'username-error');
         errorMessage.textContent = 'Enter a username';
-        // Insert error message before username input
+        // Insert error message before password input
         document.querySelector('form').insertBefore(errorMessage, username.nextSibling);
         // Add error class to username input
         username.classList.add('error');
@@ -192,7 +192,7 @@
         const errorMessage = document.createElement('div');
         errorMessage.classList.add('error_message', 'password-error');
         errorMessage.textContent = 'Password must be at least 10 characters';
-        // Insert error message before password input
+        // Insert error message before submit button
         document.querySelector('form').insertBefore(errorMessage, password.nextSibling);
         // Add error class to password input
         password.classList.add('error');
